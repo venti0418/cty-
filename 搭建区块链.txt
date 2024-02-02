@@ -1,0 +1,884 @@
+tarena@tedu:~$ sudo apt install -y openssl curl
+[sudo] tarena 的密码： 
+E: 无法获得锁 /var/lib/dpkg/lock-frontend - open (11: 资源暂时不可用)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), is another process using it?
+tarena@tedu:~$ ^C
+tarena@tedu:~$ ps -e | grep apt
+  1515 ?        00:00:00 apt.systemd.dai
+  1526 ?        00:00:00 apt.systemd.dai
+tarena@tedu:~$ sudo kill 1515
+tarena@tedu:~$ sudo kill 1526
+kill: (1526): 没有那个进程
+tarena@tedu:~$ sudo rm /var/lib/dpkg/lock-frontend 
+tarena@tedu:~$ sudo rm /var/cache/apt/archives/lock
+tarena@tedu:~$ sudo apt install -y openssl curl
+E: 无法获得锁 /var/lib/dpkg/lock - open (11: 资源暂时不可用)
+E: 无法锁定管理目录(/var/lib/dpkg/)，是否有其他进程正占用它？
+tarena@tedu:~$ sudo rm /var/lib/dpkg/lock 
+tarena@tedu:~$ sudo rm /var/cache/apt/archives/lock
+rm: 无法删除'/var/cache/apt/archives/lock': 没有那个文件或目录
+tarena@tedu:~$ sudo apt install -y openssl curl
+E: 无法获得锁 /var/lib/dpkg/lock-frontend - open (11: 资源暂时不可用)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), is another process using it?
+tarena@tedu:~$ sudo apt-get update
+获取:1 http://dl.google.com/linux/chrome/deb stable InRelease [1,825 B]
+获取:2 http://packages.microsoft.com/repos/code stable InRelease [3,589 B]         
+错误:1 http://dl.google.com/linux/chrome/deb stable InRelease                      
+  由于没有公钥，无法验证下列签名： NO_PUBKEY 4EB27DB2A3B88B8B
+获取:3 http://packages.microsoft.com/repos/code stable/main armhf Packages [16.7 kB]
+获取:4 http://packages.microsoft.com/repos/code stable/main amd64 Packages [16.5 kB]
+获取:5 http://packages.microsoft.com/repos/code stable/main arm64 Packages [16.6 kB]
+命中:6 https://mirrors.ustc.edu.cn/ubuntu bionic InRelease                         
+获取:7 https://mirrors.ustc.edu.cn/ubuntu bionic-updates InRelease [88.7 kB]       
+获取:8 https://mirrors.ustc.edu.cn/ubuntu bionic-backports InRelease [83.3 kB]     
+获取:9 https://mirrors.ustc.edu.cn/ubuntu bionic-security InRelease [88.7 kB]      
+获取:10 https://mirrors.ustc.edu.cn/ubuntu bionic-proposed InRelease [242 kB]      
+获取:11 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main Sources [546 kB]    
+获取:12 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/universe Sources [513 kB]
+获取:13 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/multiverse Sources [18.9 kB]
+获取:14 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/restricted Sources [35.3 kB]
+获取:15 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main i386 Packages [1,665 kB]
+获取:16 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 Packages [3,045 kB]
+获取:17 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main Translation-en [554 kB]
+获取:18 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 DEP-11 Metadata [297 kB]
+获取:19 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main DEP-11 48x48 Icons [83.0 kB]
+获取:20 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main DEP-11 64x64 Icons [154 kB]
+获取:21 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/restricted i386 Packages [39.7 kB]
+获取:22 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/restricted amd64 Packages [1,347 kB]
+获取:23 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/restricted Translation-en [187 kB]
+获取:24 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/universe i386 Packages [1,663 kB]
+获取:25 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/universe amd64 Packages [1,915 kB]
+获取:26 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/universe Translation-en [421 kB]
+获取:27 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/universe amd64 DEP-11 Metadata [304 kB]
+获取:28 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/universe DEP-11 48x48 Icons [237 kB]
+获取:29 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/universe DEP-11 64x64 Icons [521 kB]
+获取:30 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/multiverse amd64 Packages [25.6 kB]
+获取:31 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/multiverse i386 Packages [11.2 kB]
+获取:32 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/multiverse Translation-en [6,088 B]
+获取:33 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/multiverse amd64 DEP-11 Metadata [2,464 B]
+获取:34 https://mirrors.ustc.edu.cn/ubuntu bionic-backports/universe Sources [6,588 B]
+获取:35 https://mirrors.ustc.edu.cn/ubuntu bionic-backports/main Sources [10.5 kB] 
+获取:36 https://mirrors.ustc.edu.cn/ubuntu bionic-backports/main i386 Packages [53.2 kB]
+获取:37 https://mirrors.ustc.edu.cn/ubuntu bionic-backports/main amd64 Packages [53.3 kB]
+获取:38 https://mirrors.ustc.edu.cn/ubuntu bionic-backports/main Translation-en [14.6 kB]
+获取:39 https://mirrors.ustc.edu.cn/ubuntu bionic-backports/main amd64 DEP-11 Metadata [8,124 B]
+获取:40 https://mirrors.ustc.edu.cn/ubuntu bionic-backports/main DEP-11 48x48 Icons [7,156 B]
+获取:41 https://mirrors.ustc.edu.cn/ubuntu bionic-backports/main DEP-11 64x64 Icons [10.7 kB]
+获取:42 https://mirrors.ustc.edu.cn/ubuntu bionic-backports/universe i386 Packages [18.1 kB]
+获取:43 https://mirrors.ustc.edu.cn/ubuntu bionic-backports/universe amd64 Packages [18.2 kB]
+获取:44 https://mirrors.ustc.edu.cn/ubuntu bionic-backports/universe Translation-en [8,668 B]
+获取:45 https://mirrors.ustc.edu.cn/ubuntu bionic-backports/universe amd64 DEP-11 Metadata [10.0 kB]
+获取:46 https://mirrors.ustc.edu.cn/ubuntu bionic-backports/universe DEP-11 48x48 Icons [5,009 B]
+获取:47 https://mirrors.ustc.edu.cn/ubuntu bionic-backports/universe DEP-11 64x64 Icons [6,808 B]
+获取:48 https://mirrors.ustc.edu.cn/ubuntu bionic-security/multiverse Sources [12.2 kB]
+获取:49 https://mirrors.ustc.edu.cn/ubuntu bionic-security/universe Sources [337 kB]
+获取:50 https://mirrors.ustc.edu.cn/ubuntu bionic-security/main Sources [301 kB]   
+获取:51 https://mirrors.ustc.edu.cn/ubuntu bionic-security/restricted Sources [32.4 kB]
+获取:52 https://mirrors.ustc.edu.cn/ubuntu bionic-security/main amd64 Packages [2,717 kB]
+获取:53 https://mirrors.ustc.edu.cn/ubuntu bionic-security/main i386 Packages [1,379 kB]
+获取:54 https://mirrors.ustc.edu.cn/ubuntu bionic-security/main Translation-en [467 kB]
+错误:55 https://typora.io/linux ./ InRelease                                       
+  无法发起与 typora.io:443 (2a03:2880:f131:83:face:b00c:0:25de) 的连接 - connect (101: 网络不可达) 无法连接上 typora.io:443 (52.58.1.161)。 - connect (111: 拒绝连接)
+获取:56 https://mirrors.ustc.edu.cn/ubuntu bionic-security/main amd64 DEP-11 Metadata [76.9 kB]
+获取:57 https://mirrors.ustc.edu.cn/ubuntu bionic-security/main DEP-11 48x48 Icons [31.1 kB]
+获取:58 https://mirrors.ustc.edu.cn/ubuntu bionic-security/main DEP-11 64x64 Icons [67.9 kB]
+获取:59 https://mirrors.ustc.edu.cn/ubuntu bionic-security/restricted amd64 Packages [1,317 kB]
+获取:60 https://mirrors.ustc.edu.cn/ubuntu bionic-security/restricted i386 Packages [33.0 kB]
+获取:61 https://mirrors.ustc.edu.cn/ubuntu bionic-security/restricted Translation-en [182 kB]
+获取:62 https://mirrors.ustc.edu.cn/ubuntu bionic-security/universe i386 Packages [1,078 kB]
+获取:63 https://mirrors.ustc.edu.cn/ubuntu bionic-security/universe amd64 Packages [1,303 kB]
+获取:64 https://mirrors.ustc.edu.cn/ubuntu bionic-security/universe Translation-en [308 kB]
+获取:65 https://mirrors.ustc.edu.cn/ubuntu bionic-security/universe amd64 DEP-11 Metadata [62.4 kB]
+获取:66 https://mirrors.ustc.edu.cn/ubuntu bionic-security/universe DEP-11 48x48 Icons [35.8 kB]
+获取:67 https://mirrors.ustc.edu.cn/ubuntu bionic-security/universe DEP-11 64x64 Icons [152 kB]
+获取:68 https://mirrors.ustc.edu.cn/ubuntu bionic-security/multiverse amd64 Packages [19.8 kB]
+获取:69 https://mirrors.ustc.edu.cn/ubuntu bionic-security/multiverse i386 Packages [6,008 B]
+获取:70 https://mirrors.ustc.edu.cn/ubuntu bionic-security/multiverse Translation-en [3,928 B]
+获取:71 https://mirrors.ustc.edu.cn/ubuntu bionic-security/multiverse amd64 DEP-11 Metadata [2,464 B]
+获取:72 https://mirrors.ustc.edu.cn/ubuntu bionic-proposed/restricted Sources [7,260 B]
+获取:73 https://mirrors.ustc.edu.cn/ubuntu bionic-proposed/universe Sources [6,436 B]
+获取:74 https://mirrors.ustc.edu.cn/ubuntu bionic-proposed/main Sources [65.3 kB]  
+获取:75 https://mirrors.ustc.edu.cn/ubuntu bionic-proposed/main amd64 Packages [134 kB]
+获取:76 https://mirrors.ustc.edu.cn/ubuntu bionic-proposed/main i386 Packages [78.2 kB]
+获取:77 https://mirrors.ustc.edu.cn/ubuntu bionic-proposed/main Translation-en [28.9 kB]
+获取:78 https://mirrors.ustc.edu.cn/ubuntu bionic-proposed/main amd64 DEP-11 Metadata [3,460 B]
+获取:79 https://mirrors.ustc.edu.cn/ubuntu bionic-proposed/main DEP-11 48x48 Icons [3,775 B]
+获取:80 https://mirrors.ustc.edu.cn/ubuntu bionic-proposed/main DEP-11 64x64 Icons [5,606 B]
+获取:81 https://mirrors.ustc.edu.cn/ubuntu bionic-proposed/restricted amd64 Packages [119 kB]
+获取:82 https://mirrors.ustc.edu.cn/ubuntu bionic-proposed/restricted Translation-en [16.9 kB]
+获取:83 https://mirrors.ustc.edu.cn/ubuntu bionic-proposed/universe amd64 Packages [9,968 B]
+获取:84 https://mirrors.ustc.edu.cn/ubuntu bionic-proposed/universe i386 Packages [6,060 B]
+获取:85 https://mirrors.ustc.edu.cn/ubuntu bionic-proposed/universe Translation-en [5,344 B]
+获取:86 https://mirrors.ustc.edu.cn/ubuntu bionic-proposed/universe amd64 DEP-11 Metadata [212 B]
+已下载 24.8 MB，耗时 27秒 (924 kB/s)                                               
+正在读取软件包列表... 完成
+W: 校验数字签名时出错。此仓库未被更新，所以仍然使用此前的索引文件。GPG 错误：http://dl.google.com/linux/chrome/deb stable InRelease: 由于没有公钥，无法验证下列签名： NO_PUBKEY 4EB27DB2A3B88B8B
+W: 无法下载 https://typora.io/linux/./InRelease  无法发起与 typora.io:443 (2a03:2880:f131:83:face:b00c:0:25de) 的连接 - connect (101: 网络不可达) 无法连接上 typora.io:443 (52.58.1.161)。 - connect (111: 拒绝连接)
+W: 无法下载 http://dl.google.com/linux/chrome/deb/dists/stable/InRelease  由于没有公钥，无法验证下列签名： NO_PUBKEY 4EB27DB2A3B88B8B
+W: 部分索引文件下载失败。如果忽略它们，那将转而使用旧的索引文件。
+tarena@tedu:~$ ps -e | grep apt
+  3536 ?        00:00:00 apt.systemd.dai
+  3540 ?        00:00:00 apt.systemd.dai
+tarena@tedu:~$ sudo kill 3536
+tarena@tedu:~$ sudo kill 3540
+tarena@tedu:~$ sudo rm /var/lib/dpkg/lock-frontend 
+tarena@tedu:~$ sudo rm /var/cache/apt/archives/lock
+rm: 无法删除'/var/cache/apt/archives/lock': 没有那个文件或目录
+tarena@tedu:~$ sudo apt install -y openssl curl
+正在读取软件包列表... 完成
+正在分析软件包的依赖关系树       
+正在读取状态信息... 完成       
+下列软件包是自动安装的并且现在不需要了：
+  fonts-wqy-microhei freeglut3 gyp javascript-common libjs-async libjs-inherits
+  libjs-jquery libjs-node-uuid libjs-underscore libqgsttools-p1 libqt5designer5
+  libqt5help5 libqt5multimedia5 libqt5multimedia5-plugins libqt5multimediawidgets5
+  libqt5opengl5 libqt5positioning5 libqt5sensors5 libqt5sql5 libqt5sql5-sqlite
+  libqt5webchannel5 libqt5webkit5 libsqlite3-dev libuv1-dev node-abbrev node-ansi
+  node-ansi-color-table node-archy node-async node-balanced-match
+  node-block-stream node-brace-expansion node-builtin-modules node-combined-stream
+  node-concat-map node-cookie-jar node-delayed-stream node-forever-agent
+  node-form-data node-fs.realpath node-fstream node-fstream-ignore
+  node-github-url-from-git node-glob node-graceful-fs node-hosted-git-info
+  node-inflight node-inherits node-ini node-is-builtin-module node-isexe
+  node-json-stringify-safe node-lockfile node-lru-cache node-mime node-minimatch
+  node-mkdirp node-mute-stream node-node-uuid node-nopt
+  node-normalize-package-data node-npmlog node-once node-osenv
+  node-path-is-absolute node-pseudomap node-qs node-read node-read-package-json
+  node-request node-retry node-rimraf node-semver node-sha node-slide
+  node-spdx-correct node-spdx-expression-parse node-spdx-license-ids node-tar
+  node-tunnel-agent node-underscore node-validate-npm-package-license node-which
+  node-wrappy node-yallist python3-bs4 python3-html5lib python3-lxml
+  python3-opengl python3-pyqt5 python3-pyqt5.qtmultimedia python3-pyqt5.qtquick
+  python3-pyqt5.qtwebkit python3-sip python3-webencodings python3-xlib
+  qml-module-qtgraphicaleffects qml-module-qtquick-controls
+  qml-module-qtquick-layouts qml-module-qtquick-window2 tesseract-ocr-chi-sim
+  tesseract-ocr-chi-tra
+使用'sudo apt autoremove'来卸载它(它们)。
+将会同时安装下列软件：
+  libcurl4
+下列【新】软件包将被安装：
+  curl
+下列软件包将被升级：
+  libcurl4 openssl
+升级了 2 个软件包，新安装了 1 个软件包，要卸载 0 个软件包，有 769 个软件包未被升级。
+需要下载 993 kB 的归档。
+解压缩后会消耗 544 kB 的额外空间。
+获取:1 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 openssl amd64 1.1.1-1ubuntu2.1~18.04.23 [614 kB]
+获取:2 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 libcurl4 amd64 7.58.0-2ubuntu3.24 [221 kB]
+获取:3 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 curl amd64 7.58.0-2ubuntu3.24 [159 kB]
+已下载 993 kB，耗时 2秒 (645 kB/s)
+(正在读取数据库 ... 系统当前共安装有 173784 个文件和目录。)
+正准备解包 .../openssl_1.1.1-1ubuntu2.1~18.04.23_amd64.deb  ...
+正在将 openssl (1.1.1-1ubuntu2.1~18.04.23) 解包到 (1.1.0g-2ubuntu4.3) 上 ...
+正准备解包 .../libcurl4_7.58.0-2ubuntu3.24_amd64.deb  ...
+正在将 libcurl4:amd64 (7.58.0-2ubuntu3.24) 解包到 (7.58.0-2ubuntu3.8) 上 ...
+正在选中未选择的软件包 curl。
+正准备解包 .../curl_7.58.0-2ubuntu3.24_amd64.deb  ...
+正在解包 curl (7.58.0-2ubuntu3.24) ...
+正在设置 libcurl4:amd64 (7.58.0-2ubuntu3.24) ...
+正在处理用于 libc-bin (2.27-3ubuntu1) 的触发器 ...
+正在设置 openssl (1.1.1-1ubuntu2.1~18.04.23) ...
+正在安装新版本配置文件 /etc/ssl/openssl.cnf ...
+正在处理用于 man-db (2.8.3-2ubuntu0.1) 的触发器 ...
+正在设置 curl (7.58.0-2ubuntu3.24) ...
+tarena@tedu:~$ cd ~ && mkdir -p fisco && cd fisco
+tarena@tedu:~/fisco$ curl -#LO https://osp-1257653870.cos.ap-guangzhou.myqcloud.com/FISCO-BCOS/FISCO-BCOS/releases/v2.9.1/build_chain.sh && chmod u+x build_chain.sh
+############################################################################# 100.0%
+tarena@tedu:~/fisco$ ls
+build_chain.sh
+tarena@tedu:~/fisco$ bash build_chain.sh -l 127.0.0.1:4 -p 30300,20200,8545
+[INFO] Downloading fisco-bcos binary from https://github.com/FISCO-BCOS/FISCO-BCOS/releases/download/v2.9.1/fisco-bcos.tar.gz ...
+############################################################################# 100.0%
+==============================================================
+Generating CA key...
+==============================================================
+Generating keys and certificates ...
+Processing IP=127.0.0.1 Total=4 Agency=agency Groups=1
+Can't load /home/tarena/.rnd into RNG
+140298495676864:error:2406F079:random number generator:RAND_load_file:Cannot open file:../crypto/rand/randfile.c:88:Filename=/home/tarena/.rnd
+Can't load /home/tarena/.rnd into RNG
+140598962307520:error:2406F079:random number generator:RAND_load_file:Cannot open file:../crypto/rand/randfile.c:88:Filename=/home/tarena/.rnd
+Can't load /home/tarena/.rnd into RNG
+140289096233408:error:2406F079:random number generator:RAND_load_file:Cannot open file:../crypto/rand/randfile.c:88:Filename=/home/tarena/.rnd
+Can't load /home/tarena/.rnd into RNG
+140480858771904:error:2406F079:random number generator:RAND_load_file:Cannot open file:../crypto/rand/randfile.c:88:Filename=/home/tarena/.rnd
+Can't load /home/tarena/.rnd into RNG
+140445528957376:error:2406F079:random number generator:RAND_load_file:Cannot open file:../crypto/rand/randfile.c:88:Filename=/home/tarena/.rnd
+==============================================================
+Generating configuration files ...
+Processing IP=127.0.0.1 Total=4 Agency=agency Groups=1
+==============================================================
+[INFO] Start Port      : 30300 20200 8545
+[INFO] Server IP       : 127.0.0.1:4
+[INFO] Output Dir      : /home/tarena/fisco/nodes
+[INFO] CA Path         : /home/tarena/fisco/nodes/cert/
+[INFO] RSA channel     : true
+==============================================================
+[INFO] Execute the download_console.sh script in directory named by IP to get FISCO-BCOS console.
+e.g.  bash /home/tarena/fisco/nodes/127.0.0.1/download_console.sh -f
+==============================================================
+[INFO] All completed. Files in /home/tarena/fisco/nodes
+tarena@tedu:~/fisco$ ls
+build_chain.sh  nodes
+tarena@tedu:~/fisco$ cd nodes
+tarena@tedu:~/fisco/nodes$ ls
+127.0.0.1  cert  cert.cnf
+tarena@tedu:~/fisco/nodes$ cd 127.0.0.1
+tarena@tedu:~/fisco/nodes/127.0.0.1$ ls
+download_bin.sh      fisco-bcos  node1  node3  start_all.sh
+download_console.sh  node0       node2  sdk    stop_all.sh
+tarena@tedu:~/fisco/nodes/127.0.0.1$ bash start_all.sh
+try to start node0
+try to start node1
+try to start node2
+try to start node3
+ node0 start successfully
+ node3 start successfully
+ node1 start successfully
+ node2 start successfully
+tarena@tedu:~/fisco/nodes/127.0.0.1$ ps -ef | grep -v grep | grep fisco-bcos
+tarena     5673   1828  3 15:49 pts/0    00:00:01 /home/tarena/fisco/nodes/127.0.0.1/node0/../fisco-bcos -c config.ini
+tarena     5675   1828  3 15:49 pts/0    00:00:01 /home/tarena/fisco/nodes/127.0.0.1/node1/../fisco-bcos -c config.ini
+tarena     5677   1828  3 15:49 pts/0    00:00:01 /home/tarena/fisco/nodes/127.0.0.1/node3/../fisco-bcos -c config.ini
+tarena     5679   1828  3 15:49 pts/0    00:00:01 /home/tarena/fisco/nodes/127.0.0.1/node2/../fisco-bcos -c config.ini
+tarena@tedu:~/fisco/nodes/127.0.0.1$ cd
+tarena@tedu:~$ cd fisco
+tarena@tedu:~/fisco$ tail -f nodes/127.0.0.1/node0/log/log*  | grep +++
+info|2024-02-02 15:51:29.758578|[g:1][CONSENSUS][SEALER]++++++++++++++++ Generating seal on,blkNum=1,tx=0,nodeIdx=1,hash=6ead7bc1...
+info|2024-02-02 15:51:33.879355|[g:1][CONSENSUS][SEALER]++++++++++++++++ Generating seal on,blkNum=1,tx=0,nodeIdx=1,hash=e6884f89...
+info|2024-02-02 15:51:38.029201|[g:1][CONSENSUS][SEALER]++++++++++++++++ Generating seal on,blkNum=1,tx=0,nodeIdx=1,hash=2f8e80f9...
+info|2024-02-02 15:51:42.141414|[g:1][CONSENSUS][SEALER]++++++++++++++++ Generating seal on,blkNum=1,tx=0,nodeIdx=1,hash=e88bbb7a...
+info|2024-02-02 15:51:46.286560|[g:1][CONSENSUS][SEALER]++++++++++++++++ Generating seal on,blkNum=1,tx=0,nodeIdx=1,hash=7164961b...
+info|2024-02-02 15:51:50.452143|[g:1][CONSENSUS][SEALER]++++++++++++++++ Generating seal on,blkNum=1,tx=0,nodeIdx=1,hash=04a498af...
+info|2024-02-02 15:51:54.547036|[g:1][CONSENSUS][SEALER]++++++++++++++++ Generating seal on,blkNum=1,tx=0,nodeIdx=1,hash=2990ece4...
+info|2024-02-02 15:51:58.653716|[g:1][CONSENSUS][SEALER]++++++++++++++++ Generating seal on,blkNum=1,tx=0,nodeIdx=1,hash=2365fa89...
+info|2024-02-02 15:52:02.758175|[g:1][CONSENSUS][SEALER]++++++++++++++++ Generating seal on,blkNum=1,tx=0,nodeIdx=1,hash=1e04cb34...
+info|2024-02-02 15:52:06.895729|[g:1][CONSENSUS][SEALER]++++++++++++++++ Generating seal on,blkNum=1,tx=0,nodeIdx=1,hash=dc4f6579...
+info|2024-02-02 15:52:11.018091|[g:1][CONSENSUS][SEALER]++++++++++++++++ Generating seal on,blkNum=1,tx=0,nodeIdx=1,hash=6125cfe1...
+info|2024-02-02 15:52:15.112573|[g:1][CONSENSUS][SEALER]++++++++++++++++ Generating seal on,blkNum=1,tx=0,nodeIdx=1,hash=01b6e8ed...
+info|2024-02-02 15:52:19.263213|[g:1][CONSENSUS][SEALER]++++++++++++++++ Generating seal on,blkNum=1,tx=0,nodeIdx=1,hash=e09994ac...
+info|2024-02-02 15:52:23.378835|[g:1][CONSENSUS][SEALER]++++++++++++++++ Generating seal on,blkNum=1,tx=0,nodeIdx=1,hash=ccf56a4d...
+info|2024-02-02 15:52:27.536697|[g:1][CONSENSUS][SEALER]++++++++++++++++ Generating seal on,blkNum=1,tx=0,nodeIdx=1,hash=f3f8f4b3...
+info|2024-02-02 15:52:31.626811|[g:1][CONSENSUS][SEALER]++++++++++++++++ Generating seal on,blkNum=1,tx=0,nodeIdx=1,hash=2fb5f488...
+info|2024-02-02 15:52:35.729246|[g:1][CONSENSUS][SEALER]++++++++++++++++ Generating seal on,blkNum=1,tx=0,nodeIdx=1,hash=938d7746...
+info|2024-02-02 15:52:39.874860|[g:1][CONSENSUS][SEALER]++++++++++++++++ Generating seal on,blkNum=1,tx=0,nodeIdx=1,hash=fce4f30b...
+info|2024-02-02 15:52:43.996135|[g:1][CONSENSUS][SEALER]++++++++++++++++ Generating seal on,blkNum=1,tx=0,nodeIdx=1,hash=d8969b9a...
+info|2024-02-02 15:52:48.092381|[g:1][CONSENSUS][SEALER]++++++++++++++++ Generating seal on,blkNum=1,tx=0,nodeIdx=1,hash=7b0ed1d9...
+info|2024-02-02 15:52:52.197975|[g:1][CONSENSUS][SEALER]++++++++++++++++ Generating seal on,blkNum=1,tx=0,nodeIdx=1,hash=a8cbfbeb...
+info|2024-02-02 15:52:56.290638|[g:1][CONSENSUS][SEALER]++++++++++++++++ Generating seal on,blkNum=1,tx=0,nodeIdx=1,hash=a04dac41...
+info|2024-02-02 15:53:00.430322|[g:1][CONSENSUS][SEALER]++++++++++++++++ Generating seal on,blkNum=1,tx=0,nodeIdx=1,hash=3fddced4...
+^C
+tarena@tedu:~/fisco$ tail -f nodes/127.0.0.1/node0/log/log*  | grep connected
+info|2024-02-02 15:53:17.007806|[P2P][Service] heartBeat,connected count=3
+info|2024-02-02 15:53:27.008939|[P2P][Service] heartBeat,connected count=3
+info|2024-02-02 15:53:37.009827|[P2P][Service] heartBeat,connected count=3
+^C
+tarena@tedu:~/fisco$ sudo apt install -y default-jdk
+正在读取软件包列表... 完成
+正在分析软件包的依赖关系树       
+正在读取状态信息... 完成       
+下列软件包是自动安装的并且现在不需要了：
+  freeglut3 gyp javascript-common libjs-async libjs-inherits libjs-jquery
+  libjs-node-uuid libjs-underscore libqgsttools-p1 libqt5designer5 libqt5help5
+  libqt5multimedia5 libqt5multimedia5-plugins libqt5multimediawidgets5
+  libqt5opengl5 libqt5positioning5 libqt5sensors5 libqt5sql5 libqt5sql5-sqlite
+  libqt5webchannel5 libqt5webkit5 libsqlite3-dev libuv1-dev node-abbrev node-ansi
+  node-ansi-color-table node-archy node-async node-balanced-match
+  node-block-stream node-brace-expansion node-builtin-modules node-combined-stream
+  node-concat-map node-cookie-jar node-delayed-stream node-forever-agent
+  node-form-data node-fs.realpath node-fstream node-fstream-ignore
+  node-github-url-from-git node-glob node-graceful-fs node-hosted-git-info
+  node-inflight node-inherits node-ini node-is-builtin-module node-isexe
+  node-json-stringify-safe node-lockfile node-lru-cache node-mime node-minimatch
+  node-mkdirp node-mute-stream node-node-uuid node-nopt
+  node-normalize-package-data node-npmlog node-once node-osenv
+  node-path-is-absolute node-pseudomap node-qs node-read node-read-package-json
+  node-request node-retry node-rimraf node-semver node-sha node-slide
+  node-spdx-correct node-spdx-expression-parse node-spdx-license-ids node-tar
+  node-tunnel-agent node-underscore node-validate-npm-package-license node-which
+  node-wrappy node-yallist python3-bs4 python3-html5lib python3-lxml
+  python3-opengl python3-pyqt5 python3-pyqt5.qtmultimedia python3-pyqt5.qtquick
+  python3-pyqt5.qtwebkit python3-sip python3-webencodings python3-xlib
+  qml-module-qtgraphicaleffects qml-module-qtquick-controls
+  qml-module-qtquick-layouts qml-module-qtquick-window2 tesseract-ocr-chi-sim
+  tesseract-ocr-chi-tra
+使用'sudo apt autoremove'来卸载它(它们)。
+将会同时安装下列软件：
+  ca-certificates-java default-jdk-headless default-jre default-jre-headless
+  fonts-dejavu-extra gstreamer1.0-gtk3 java-common libatk-wrapper-java
+  libatk-wrapper-java-jni libice-dev libice6 libpthread-stubs0-dev
+  libreoffice-avmedia-backend-gstreamer libreoffice-base-core libreoffice-calc
+  libreoffice-core libreoffice-draw libreoffice-gnome libreoffice-gtk3
+  libreoffice-impress libreoffice-math libreoffice-ogltrans libreoffice-writer
+  libsm-dev libx11-6 libx11-dev libx11-doc libxau-dev libxau6 libxcb1 libxcb1-dev
+  libxdmcp-dev libxt-dev openjdk-11-jdk openjdk-11-jdk-headless openjdk-11-jre
+  openjdk-11-jre-headless python3-uno x11proto-core-dev x11proto-dev
+  xorg-sgml-doctools xtrans-dev
+建议安装：
+  libice-doc libreoffice-base ocl-icd-libopencl1 libreoffice-evolution
+  libreofficekit-data fonts-crosextra-caladea fonts-crosextra-carlito
+  libreoffice-java-common libsm-doc libxcb-doc libxt-doc openjdk-11-demo
+  openjdk-11-source visualvm fonts-ipafont-gothic fonts-ipafont-mincho
+下列【新】软件包将被安装：
+  ca-certificates-java default-jdk default-jdk-headless default-jre
+  default-jre-headless fonts-dejavu-extra gstreamer1.0-gtk3 java-common
+  libatk-wrapper-java libatk-wrapper-java-jni libice-dev libpthread-stubs0-dev
+  libsm-dev libx11-dev libx11-doc libxau-dev libxcb1-dev libxdmcp-dev libxt-dev
+  openjdk-11-jdk openjdk-11-jdk-headless openjdk-11-jre openjdk-11-jre-headless
+  x11proto-core-dev x11proto-dev xorg-sgml-doctools xtrans-dev
+下列软件包将被升级：
+  libice6 libreoffice-avmedia-backend-gstreamer libreoffice-base-core
+  libreoffice-calc libreoffice-core libreoffice-draw libreoffice-gnome
+  libreoffice-gtk3 libreoffice-impress libreoffice-math libreoffice-ogltrans
+  libreoffice-writer libx11-6 libxau6 libxcb1 python3-uno
+升级了 16 个软件包，新安装了 27 个软件包，要卸载 0 个软件包，有 753 个软件包未被升级。
+需要下载 172 MB 的归档。
+解压缩后会消耗 284 MB 的额外空间。
+获取:1 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 libxau6 amd64 1:1.0.8-1ubuntu1 [7,556 B]
+获取:2 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 libxcb1 amd64 1.13-2~ubuntu18.04 [45.5 kB]
+获取:3 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 libx11-6 amd64 2:1.6.4-3ubuntu0.4 [572 kB]
+获取:4 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 libreoffice-calc amd64 1:6.0.7-0ubuntu0.18.04.13 [7,026 kB]
+获取:5 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 libreoffice-impress amd64 1:6.0.7-0ubuntu0.18.04.13 [905 kB]
+获取:6 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 libreoffice-draw amd64 1:6.0.7-0ubuntu0.18.04.13 [2,678 kB]
+获取:7 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 libreoffice-gnome amd64 1:6.0.7-0ubuntu0.18.04.13 [59.4 kB]
+获取:8 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 libreoffice-gtk3 amd64 1:6.0.7-0ubuntu0.18.04.13 [216 kB]
+获取:9 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 python3-uno amd64 1:6.0.7-0ubuntu0.18.04.13 [123 kB]
+获取:10 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 libreoffice-base-core amd64 1:6.0.7-0ubuntu0.18.04.13 [705 kB]
+获取:11 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 libreoffice-math amd64 1:6.0.7-0ubuntu0.18.04.13 [393 kB]
+获取:12 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 libreoffice-ogltrans amd64 1:6.0.7-0ubuntu0.18.04.13 [73.9 kB]
+获取:13 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 libreoffice-avmedia-backend-gstreamer amd64 1:6.0.7-0ubuntu0.18.04.13 [24.7 kB]
+获取:14 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 libreoffice-writer amd64 1:6.0.7-0ubuntu0.18.04.13 [8,296 kB]
+获取:15 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 libreoffice-core amd64 1:6.0.7-0ubuntu0.18.04.13 [31.9 MB]
+获取:16 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 libice6 amd64 2:1.0.9-2ubuntu0.18.04.1 [40.7 kB]
+获取:17 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 java-common all 0.68ubuntu1~18.04.1 [14.5 kB]
+获取:18 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 openjdk-11-jre-headless amd64 11.0.19+7~us1-0ubuntu1~18.04.1 [38.1 MB]
+获取:19 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 default-jre-headless amd64 2:1.11-68ubuntu1~18.04.1 [10.9 kB]
+获取:20 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 ca-certificates-java all 20180516ubuntu1~18.04.2 [12.5 kB]
+获取:21 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 openjdk-11-jre amd64 11.0.19+7~us1-0ubuntu1~18.04.1 [192 kB]
+获取:22 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 default-jre amd64 2:1.11-68ubuntu1~18.04.1 [1,076 B]
+获取:23 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 openjdk-11-jdk-headless amd64 11.0.19+7~us1-0ubuntu1~18.04.1 [73.5 MB]
+获取:24 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 default-jdk-headless amd64 2:1.11-68ubuntu1~18.04.1 [1,132 B]
+获取:25 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 openjdk-11-jdk amd64 11.0.19+7~us1-0ubuntu1~18.04.1 [1,331 kB]
+获取:26 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 default-jdk amd64 2:1.11-68ubuntu1~18.04.1 [1,092 B]
+获取:27 https://mirrors.ustc.edu.cn/ubuntu bionic/main amd64 fonts-dejavu-extra all 2.37-1 [1,953 kB]
+获取:28 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 gstreamer1.0-gtk3 amd64 1.14.5-0ubuntu1~18.04.3 [62.7 kB]
+获取:29 https://mirrors.ustc.edu.cn/ubuntu bionic/main amd64 libatk-wrapper-java all 0.33.3-20ubuntu0.1 [34.7 kB]
+获取:30 https://mirrors.ustc.edu.cn/ubuntu bionic/main amd64 libatk-wrapper-java-jni amd64 0.33.3-20ubuntu0.1 [28.3 kB]
+获取:31 https://mirrors.ustc.edu.cn/ubuntu bionic/main amd64 xorg-sgml-doctools all 1:1.11-1 [12.9 kB]
+获取:32 https://mirrors.ustc.edu.cn/ubuntu bionic/main amd64 x11proto-dev all 2018.4-4 [251 kB]
+获取:33 https://mirrors.ustc.edu.cn/ubuntu bionic/main amd64 x11proto-core-dev all 2018.4-4 [2,620 B]
+获取:34 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 libice-dev amd64 2:1.0.9-2ubuntu0.18.04.1 [47.2 kB]
+获取:35 https://mirrors.ustc.edu.cn/ubuntu bionic/main amd64 libpthread-stubs0-dev amd64 0.3-4 [4,068 B]
+获取:36 https://mirrors.ustc.edu.cn/ubuntu bionic/main amd64 libsm-dev amd64 2:1.2.2-1 [16.2 kB]
+获取:37 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 libxau-dev amd64 1:1.0.8-1ubuntu1 [9,476 B]
+获取:38 https://mirrors.ustc.edu.cn/ubuntu bionic/main amd64 libxdmcp-dev amd64 1:1.1.2-3 [25.1 kB]
+获取:39 https://mirrors.ustc.edu.cn/ubuntu bionic/main amd64 xtrans-dev all 1.3.5-1 [70.5 kB]
+获取:40 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 libxcb1-dev amd64 1.13-2~ubuntu18.04 [80.0 kB]
+获取:41 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 libx11-dev amd64 2:1.6.4-3ubuntu0.4 [641 kB]
+获取:42 https://mirrors.ustc.edu.cn/ubuntu bionic-updates/main amd64 libx11-doc all 2:1.6.4-3ubuntu0.4 [2,065 kB]
+获取:43 https://mirrors.ustc.edu.cn/ubuntu bionic/main amd64 libxt-dev amd64 1:1.1.5-1 [395 kB]
+已下载 172 MB，耗时 4分 21秒 (658 kB/s)                                            
+正在从软件包中解出模板：100%
+(正在读取数据库 ... 系统当前共安装有 173798 个文件和目录。)
+正准备解包 .../00-libxau6_1%3a1.0.8-1ubuntu1_amd64.deb  ...
+正在将 libxau6:amd64 (1:1.0.8-1ubuntu1) 解包到 (1:1.0.8-1) 上 ...
+正准备解包 .../01-libxcb1_1.13-2~ubuntu18.04_amd64.deb  ...
+正在将 libxcb1:amd64 (1.13-2~ubuntu18.04) 解包到 (1.13-1) 上 ...
+正准备解包 .../02-libx11-6_2%3a1.6.4-3ubuntu0.4_amd64.deb  ...
+正在将 libx11-6:amd64 (2:1.6.4-3ubuntu0.4) 解包到 (2:1.6.4-3ubuntu0.1) 上 ...
+正准备解包 .../03-libreoffice-calc_1%3a6.0.7-0ubuntu0.18.04.13_amd64.deb  ...
+正在将 libreoffice-calc (1:6.0.7-0ubuntu0.18.04.13) 解包到 (1:6.0.7-0ubuntu0.18.04.2) 上 ...
+正准备解包 .../04-libreoffice-impress_1%3a6.0.7-0ubuntu0.18.04.13_amd64.deb  ...
+正在将 libreoffice-impress (1:6.0.7-0ubuntu0.18.04.13) 解包到 (1:6.0.7-0ubuntu0.18.04.2) 上 ...
+正准备解包 .../05-libreoffice-draw_1%3a6.0.7-0ubuntu0.18.04.13_amd64.deb  ...
+正在将 libreoffice-draw (1:6.0.7-0ubuntu0.18.04.13) 解包到 (1:6.0.7-0ubuntu0.18.04.2) 上 ...
+正准备解包 .../06-libreoffice-gnome_1%3a6.0.7-0ubuntu0.18.04.13_amd64.deb  ...
+正在将 libreoffice-gnome (1:6.0.7-0ubuntu0.18.04.13) 解包到 (1:6.0.7-0ubuntu0.18.04.2) 上 ...
+正准备解包 .../07-libreoffice-gtk3_1%3a6.0.7-0ubuntu0.18.04.13_amd64.deb  ...
+正在将 libreoffice-gtk3 (1:6.0.7-0ubuntu0.18.04.13) 解包到 (1:6.0.7-0ubuntu0.18.04.2) 上 ...
+正准备解包 .../08-python3-uno_1%3a6.0.7-0ubuntu0.18.04.13_amd64.deb  ...
+正在将 python3-uno (1:6.0.7-0ubuntu0.18.04.13) 解包到 (1:6.0.7-0ubuntu0.18.04.2) 上 ...
+正准备解包 .../09-libreoffice-base-core_1%3a6.0.7-0ubuntu0.18.04.13_amd64.deb  ...
+正在将 libreoffice-base-core (1:6.0.7-0ubuntu0.18.04.13) 解包到 (1:6.0.7-0ubuntu0.18.04.2) 上 ...
+正准备解包 .../10-libreoffice-math_1%3a6.0.7-0ubuntu0.18.04.13_amd64.deb  ...
+正在将 libreoffice-math (1:6.0.7-0ubuntu0.18.04.13) 解包到 (1:6.0.7-0ubuntu0.18.04.2) 上 ...
+正准备解包 .../11-libreoffice-ogltrans_1%3a6.0.7-0ubuntu0.18.04.13_amd64.deb  ...
+正在将 libreoffice-ogltrans (1:6.0.7-0ubuntu0.18.04.13) 解包到 (1:6.0.7-0ubuntu0.18.04.2) 上 ...
+正准备解包 .../12-libreoffice-avmedia-backend-gstreamer_1%3a6.0.7-0ubuntu0.18.04.13_amd64.deb  ...
+正在将 libreoffice-avmedia-backend-gstreamer (1:6.0.7-0ubuntu0.18.04.13) 解包到 (1:6.0.7-0ubuntu0.18.04.2) 上 ...
+正准备解包 .../13-libreoffice-writer_1%3a6.0.7-0ubuntu0.18.04.13_amd64.deb  ...
+正在将 libreoffice-writer (1:6.0.7-0ubuntu0.18.04.13) 解包到 (1:6.0.7-0ubuntu0.18.04.2) 上 ...
+正准备解包 .../14-libreoffice-core_1%3a6.0.7-0ubuntu0.18.04.13_amd64.deb  ...
+正在将 libreoffice-core (1:6.0.7-0ubuntu0.18.04.13) 解包到 (1:6.0.7-0ubuntu0.18.04.2) 上 ...
+正准备解包 .../15-libice6_2%3a1.0.9-2ubuntu0.18.04.1_amd64.deb  ...
+正在将 libice6:amd64 (2:1.0.9-2ubuntu0.18.04.1) 解包到 (2:1.0.9-2) 上 ...
+正在选中未选择的软件包 java-common。
+正准备解包 .../16-java-common_0.68ubuntu1~18.04.1_all.deb  ...
+正在解包 java-common (0.68ubuntu1~18.04.1) ...
+正在选中未选择的软件包 openjdk-11-jre-headless:amd64。
+正准备解包 .../17-openjdk-11-jre-headless_11.0.19+7~us1-0ubuntu1~18.04.1_amd64.deb  ...
+正在解包 openjdk-11-jre-headless:amd64 (11.0.19+7~us1-0ubuntu1~18.04.1) ...
+正在选中未选择的软件包 default-jre-headless。
+正准备解包 .../18-default-jre-headless_2%3a1.11-68ubuntu1~18.04.1_amd64.deb  ...
+正在解包 default-jre-headless (2:1.11-68ubuntu1~18.04.1) ...
+正在选中未选择的软件包 ca-certificates-java。
+正准备解包 .../19-ca-certificates-java_20180516ubuntu1~18.04.2_all.deb  ...
+正在解包 ca-certificates-java (20180516ubuntu1~18.04.2) ...
+正在选中未选择的软件包 openjdk-11-jre:amd64。
+正准备解包 .../20-openjdk-11-jre_11.0.19+7~us1-0ubuntu1~18.04.1_amd64.deb  ...
+正在解包 openjdk-11-jre:amd64 (11.0.19+7~us1-0ubuntu1~18.04.1) ...
+正在选中未选择的软件包 default-jre。
+正准备解包 .../21-default-jre_2%3a1.11-68ubuntu1~18.04.1_amd64.deb  ...
+正在解包 default-jre (2:1.11-68ubuntu1~18.04.1) ...
+正在选中未选择的软件包 openjdk-11-jdk-headless:amd64。
+正准备解包 .../22-openjdk-11-jdk-headless_11.0.19+7~us1-0ubuntu1~18.04.1_amd64.deb  ...
+正在解包 openjdk-11-jdk-headless:amd64 (11.0.19+7~us1-0ubuntu1~18.04.1) ...
+正在选中未选择的软件包 default-jdk-headless。
+正准备解包 .../23-default-jdk-headless_2%3a1.11-68ubuntu1~18.04.1_amd64.deb  ...
+正在解包 default-jdk-headless (2:1.11-68ubuntu1~18.04.1) ...
+正在选中未选择的软件包 openjdk-11-jdk:amd64。
+正准备解包 .../24-openjdk-11-jdk_11.0.19+7~us1-0ubuntu1~18.04.1_amd64.deb  ...
+正在解包 openjdk-11-jdk:amd64 (11.0.19+7~us1-0ubuntu1~18.04.1) ...
+正在选中未选择的软件包 default-jdk。
+正准备解包 .../25-default-jdk_2%3a1.11-68ubuntu1~18.04.1_amd64.deb  ...
+正在解包 default-jdk (2:1.11-68ubuntu1~18.04.1) ...
+正在选中未选择的软件包 fonts-dejavu-extra。
+正准备解包 .../26-fonts-dejavu-extra_2.37-1_all.deb  ...
+正在解包 fonts-dejavu-extra (2.37-1) ...
+正在选中未选择的软件包 gstreamer1.0-gtk3:amd64。
+正准备解包 .../27-gstreamer1.0-gtk3_1.14.5-0ubuntu1~18.04.3_amd64.deb  ...
+正在解包 gstreamer1.0-gtk3:amd64 (1.14.5-0ubuntu1~18.04.3) ...
+正在选中未选择的软件包 libatk-wrapper-java。
+正准备解包 .../28-libatk-wrapper-java_0.33.3-20ubuntu0.1_all.deb  ...
+正在解包 libatk-wrapper-java (0.33.3-20ubuntu0.1) ...
+正在选中未选择的软件包 libatk-wrapper-java-jni:amd64。
+正准备解包 .../29-libatk-wrapper-java-jni_0.33.3-20ubuntu0.1_amd64.deb  ...
+正在解包 libatk-wrapper-java-jni:amd64 (0.33.3-20ubuntu0.1) ...
+正在选中未选择的软件包 xorg-sgml-doctools。
+正准备解包 .../30-xorg-sgml-doctools_1%3a1.11-1_all.deb  ...
+正在解包 xorg-sgml-doctools (1:1.11-1) ...
+正在选中未选择的软件包 x11proto-dev。
+正准备解包 .../31-x11proto-dev_2018.4-4_all.deb  ...
+正在解包 x11proto-dev (2018.4-4) ...
+正在选中未选择的软件包 x11proto-core-dev。
+正准备解包 .../32-x11proto-core-dev_2018.4-4_all.deb  ...
+正在解包 x11proto-core-dev (2018.4-4) ...
+正在选中未选择的软件包 libice-dev:amd64。
+正准备解包 .../33-libice-dev_2%3a1.0.9-2ubuntu0.18.04.1_amd64.deb  ...
+正在解包 libice-dev:amd64 (2:1.0.9-2ubuntu0.18.04.1) ...
+正在选中未选择的软件包 libpthread-stubs0-dev:amd64。
+正准备解包 .../34-libpthread-stubs0-dev_0.3-4_amd64.deb  ...
+正在解包 libpthread-stubs0-dev:amd64 (0.3-4) ...
+正在选中未选择的软件包 libsm-dev:amd64。
+正准备解包 .../35-libsm-dev_2%3a1.2.2-1_amd64.deb  ...
+正在解包 libsm-dev:amd64 (2:1.2.2-1) ...
+正在选中未选择的软件包 libxau-dev:amd64。
+正准备解包 .../36-libxau-dev_1%3a1.0.8-1ubuntu1_amd64.deb  ...
+正在解包 libxau-dev:amd64 (1:1.0.8-1ubuntu1) ...
+正在选中未选择的软件包 libxdmcp-dev:amd64。
+正准备解包 .../37-libxdmcp-dev_1%3a1.1.2-3_amd64.deb  ...
+正在解包 libxdmcp-dev:amd64 (1:1.1.2-3) ...
+正在选中未选择的软件包 xtrans-dev。
+正准备解包 .../38-xtrans-dev_1.3.5-1_all.deb  ...
+正在解包 xtrans-dev (1.3.5-1) ...
+正在选中未选择的软件包 libxcb1-dev:amd64。
+正准备解包 .../39-libxcb1-dev_1.13-2~ubuntu18.04_amd64.deb  ...
+正在解包 libxcb1-dev:amd64 (1.13-2~ubuntu18.04) ...
+正在选中未选择的软件包 libx11-dev:amd64。
+正准备解包 .../40-libx11-dev_2%3a1.6.4-3ubuntu0.4_amd64.deb  ...
+正在解包 libx11-dev:amd64 (2:1.6.4-3ubuntu0.4) ...
+正在选中未选择的软件包 libx11-doc。
+正准备解包 .../41-libx11-doc_2%3a1.6.4-3ubuntu0.4_all.deb  ...
+正在解包 libx11-doc (2:1.6.4-3ubuntu0.4) ...
+正在选中未选择的软件包 libxt-dev:amd64。
+正准备解包 .../42-libxt-dev_1%3a1.1.5-1_amd64.deb  ...
+正在解包 libxt-dev:amd64 (1:1.1.5-1) ...
+正在处理用于 mime-support (3.60ubuntu1) 的触发器 ...
+正在处理用于 libreoffice-common (1:6.0.7-0ubuntu0.18.04.2) 的触发器 ...
+正在处理用于 desktop-file-utils (0.23-1ubuntu3.18.04.2) 的触发器 ...
+正在设置 libpthread-stubs0-dev:amd64 (0.3-4) ...
+正在设置 gstreamer1.0-gtk3:amd64 (1.14.5-0ubuntu1~18.04.3) ...
+正在设置 xorg-sgml-doctools (1:1.11-1) ...
+正在设置 java-common (0.68ubuntu1~18.04.1) ...
+正在处理用于 sgml-base (1.29) 的触发器 ...
+正在设置 x11proto-dev (2018.4-4) ...
+正在设置 xtrans-dev (1.3.5-1) ...
+正在设置 libxdmcp-dev:amd64 (1:1.1.2-3) ...
+正在处理用于 libc-bin (2.27-3ubuntu1) 的触发器 ...
+正在设置 libice6:amd64 (2:1.0.9-2ubuntu0.18.04.1) ...
+正在设置 libx11-doc (2:1.6.4-3ubuntu0.4) ...
+正在处理用于 man-db (2.8.3-2ubuntu0.1) 的触发器 ...
+ 正在处理用于 gnome-menus (3.13.3-11ubuntu1.1) 的触发器 ...
+正在设置 fonts-dejavu-extra (2.37-1) ...
+正在处理用于 ca-certificates (20210119~18.04.2) 的触发器 ...
+Updating certificates in /etc/ssl/certs...
+0 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d...
+done.
+正在设置 libatk-wrapper-java (0.33.3-20ubuntu0.1) ...
+正在处理用于 hicolor-icon-theme (0.17-2) 的触发器 ...
+正在设置 libxau6:amd64 (1:1.0.8-1ubuntu1) ...
+正在处理用于 fontconfig (2.12.6-0ubuntu2) 的触发器 ...
+正在设置 x11proto-core-dev (2018.4-4) ...
+正在设置 libxau-dev:amd64 (1:1.0.8-1ubuntu1) ...
+正在设置 libatk-wrapper-java-jni:amd64 (0.33.3-20ubuntu0.1) ...
+正在设置 libice-dev:amd64 (2:1.0.9-2ubuntu0.18.04.1) ...
+正在设置 libxcb1:amd64 (1.13-2~ubuntu18.04) ...
+正在设置 libsm-dev:amd64 (2:1.2.2-1) ...
+正在设置 libx11-6:amd64 (2:1.6.4-3ubuntu0.4) ...
+正在设置 libreoffice-core (1:6.0.7-0ubuntu0.18.04.13) ...
+正在设置 python3-uno (1:6.0.7-0ubuntu0.18.04.13) ...
+正在设置 libxcb1-dev:amd64 (1.13-2~ubuntu18.04) ...
+正在设置 libx11-dev:amd64 (2:1.6.4-3ubuntu0.4) ...
+正在设置 libreoffice-gtk3 (1:6.0.7-0ubuntu0.18.04.13) ...
+正在设置 libreoffice-gnome (1:6.0.7-0ubuntu0.18.04.13) ...
+正在设置 libreoffice-draw (1:6.0.7-0ubuntu0.18.04.13) ...
+正在设置 libreoffice-avmedia-backend-gstreamer (1:6.0.7-0ubuntu0.18.04.13) ...
+正在设置 libxt-dev:amd64 (1:1.1.5-1) ...
+正在设置 libreoffice-impress (1:6.0.7-0ubuntu0.18.04.13) ...
+正在设置 libreoffice-math (1:6.0.7-0ubuntu0.18.04.13) ...
+正在设置 libreoffice-base-core (1:6.0.7-0ubuntu0.18.04.13) ...
+正在设置 libreoffice-calc (1:6.0.7-0ubuntu0.18.04.13) ...
+正在设置 libreoffice-ogltrans (1:6.0.7-0ubuntu0.18.04.13) ...
+正在设置 libreoffice-writer (1:6.0.7-0ubuntu0.18.04.13) ...
+正在设置 openjdk-11-jre-headless:amd64 (11.0.19+7~us1-0ubuntu1~18.04.1) ...
+update-alternatives: 使用 /usr/lib/jvm/java-11-openjdk-amd64/bin/java 来在自动模式中提供 /usr/bin/java (java)
+update-alternatives: 使用 /usr/lib/jvm/java-11-openjdk-amd64/bin/jjs 来在自动模式中提供 /usr/bin/jjs (jjs)
+update-alternatives: 使用 /usr/lib/jvm/java-11-openjdk-amd64/bin/keytool 来在自动模式中提供 /usr/bin/keytool (keytool)
+update-alternatives: 使用 /usr/lib/jvm/java-11-openjdk-amd64/bin/rmid 来在自动模式中提供 /usr/bin/rmid (rmid)
+update-alternatives: 使用 /usr/lib/jvm/java-11-openjdk-amd64/bin/rmiregistry 来在自动模式中提供 /usr/bin/rmiregistry (rmiregistry)
+update-alternatives: 使用 /usr/lib/jvm/java-11-openjdk-amd64/bin/pack200 来在自动模式中提供 /usr/bin/pack200 (pack200)
+update-alternatives: 使用 /usr/lib/jvm/java-11-openjdk-amd64/bin/unpack200 来在自动模式中提供 /usr/bin/unpack200 (unpack200)
+update-alternatives: 使用 /usr/lib/jvm/java-11-openjdk-amd64/lib/jexec 来在自动模式中提供 /usr/bin/jexec (jexec)
+正在设置 openjdk-11-jdk-headless:amd64 (11.0.19+7~us1-0ubuntu1~18.04.1) ...
+update-alternatives: 使用 /usr/lib/jvm/java-11-openjdk-amd64/bin/jar 来在自动模式中提供 /usr/bin/jar (jar)
+update-alternatives: 使用 /usr/lib/jvm/java-11-openjdk-amd64/bin/jarsigner 来在自动模式中提供 /usr/bin/jarsigner (jarsigner)
+update-alternatives: 使用 /usr/lib/jvm/java-11-openjdk-amd64/bin/javac 来在自动模式中提供 /usr/bin/javac (javac)
+update-alternatives: 使用 /usr/lib/jvm/java-11-openjdk-amd64/bin/javadoc 来在自动模式中提供 /usr/bin/javadoc (javadoc)
+update-alternatives: 使用 /usr/lib/jvm/java-11-openjdk-amd64/bin/javap 来在自动模式中提供 /usr/bin/javap (javap)
+update-alternatives: 使用 /usr/lib/jvm/java-11-openjdk-amd64/bin/jcmd 来在自动模式中提供 /usr/bin/jcmd (jcmd)
+update-alternatives: 使用 /usr/lib/jvm/java-11-openjdk-amd64/bin/jdb 来在自动模式中提供 /usr/bin/jdb (jdb)
+update-alternatives: 使用 /usr/lib/jvm/java-11-openjdk-amd64/bin/jdeprscan 来在自动模式中提供 /usr/bin/jdeprscan (jdeprscan)
+update-alternatives: 使用 /usr/lib/jvm/java-11-openjdk-amd64/bin/jdeps 来在自动模式中提供 /usr/bin/jdeps (jdeps)
+update-alternatives: 使用 /usr/lib/jvm/java-11-openjdk-amd64/bin/jfr 来在自动模式中提供 /usr/bin/jfr (jfr)
+update-alternatives: 使用 /usr/lib/jvm/java-11-openjdk-amd64/bin/jimage 来在自动模式中提供 /usr/bin/jimage (jimage)
+update-alternatives: 使用 /usr/lib/jvm/java-11-openjdk-amd64/bin/jinfo 来在自动模式中提供 /usr/bin/jinfo (jinfo)
+update-alternatives: 使用 /usr/lib/jvm/java-11-openjdk-amd64/bin/jlink 来在自动模式中提供 /usr/bin/jlink (jlink)
+update-alternatives: 使用 /usr/lib/jvm/java-11-openjdk-amd64/bin/jmap 来在自动模式中提供 /usr/bin/jmap (jmap)
+update-alternatives: 使用 /usr/lib/jvm/java-11-openjdk-amd64/bin/jmod 来在自动模式中提供 /usr/bin/jmod (jmod)
+update-alternatives: 使用 /usr/lib/jvm/java-11-openjdk-amd64/bin/jps 来在自动模式中提供 /usr/bin/jps (jps)
+update-alternatives: 使用 /usr/lib/jvm/java-11-openjdk-amd64/bin/jrunscript 来在自动模式中提供 /usr/bin/jrunscript (jrunscript)
+update-alternatives: 使用 /usr/lib/jvm/java-11-openjdk-amd64/bin/jshell 来在自动模式中提供 /usr/bin/jshell (jshell)
+update-alternatives: 使用 /usr/lib/jvm/java-11-openjdk-amd64/bin/jstack 来在自动模式中提供 /usr/bin/jstack (jstack)
+update-alternatives: 使用 /usr/lib/jvm/java-11-openjdk-amd64/bin/jstat 来在自动模式中提供 /usr/bin/jstat (jstat)
+update-alternatives: 使用 /usr/lib/jvm/java-11-openjdk-amd64/bin/jstatd 来在自动模式中提供 /usr/bin/jstatd (jstatd)
+update-alternatives: 使用 /usr/lib/jvm/java-11-openjdk-amd64/bin/rmic 来在自动模式中提供 /usr/bin/rmic (rmic)
+update-alternatives: 使用 /usr/lib/jvm/java-11-openjdk-amd64/bin/serialver 来在自动模式中提供 /usr/bin/serialver (serialver)
+update-alternatives: 使用 /usr/lib/jvm/java-11-openjdk-amd64/bin/jaotc 来在自动模式中提供 /usr/bin/jaotc (jaotc)
+update-alternatives: 使用 /usr/lib/jvm/java-11-openjdk-amd64/bin/jhsdb 来在自动模式中提供 /usr/bin/jhsdb (jhsdb)
+正在设置 default-jre-headless (2:1.11-68ubuntu1~18.04.1) ...
+正在设置 default-jdk-headless (2:1.11-68ubuntu1~18.04.1) ...
+正在设置 openjdk-11-jre:amd64 (11.0.19+7~us1-0ubuntu1~18.04.1) ...
+正在设置 ca-certificates-java (20180516ubuntu1~18.04.2) ...
+head: 无法打开'/etc/ssl/certs/java/cacerts' 读取数据: 没有那个文件或目录
+Adding debian:Global_Chambersign_Root_-_2008.pem
+Adding debian:SSL.com_Root_Certification_Authority_RSA.pem
+Adding debian:Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068.pem
+Adding debian:Microsec_e-Szigno_Root_CA_2009.pem
+Adding debian:TrustCor_RootCert_CA-2.pem
+Adding debian:ACCVRAIZ1.pem
+Adding debian:VeriSign_Universal_Root_Certification_Authority.pem
+Adding debian:NetLock_Arany_=Class_Gold=_Főtanúsítvány.pem
+Adding debian:Go_Daddy_Root_Certificate_Authority_-_G2.pem
+Adding debian:certSIGN_ROOT_CA.pem
+Adding debian:Amazon_Root_CA_2.pem
+Adding debian:Hongkong_Post_Root_CA_3.pem
+Adding debian:DigiCert_Global_Root_CA.pem
+Adding debian:Go_Daddy_Class_2_CA.pem
+Adding debian:Buypass_Class_2_Root_CA.pem
+Adding debian:Chambers_of_Commerce_Root_-_2008.pem
+Adding debian:Buypass_Class_3_Root_CA.pem
+Adding debian:SZAFIR_ROOT_CA2.pem
+Adding debian:Trustwave_Global_Certification_Authority.pem
+Adding debian:Trustwave_Global_ECC_P256_Certification_Authority.pem
+Adding debian:Entrust.net_Premium_2048_Secure_Server_CA.pem
+Adding debian:Security_Communication_Root_CA.pem
+Adding debian:DigiCert_Trusted_Root_G4.pem
+Adding debian:QuoVadis_Root_CA_2.pem
+Adding debian:EC-ACC.pem
+Adding debian:Entrust_Root_Certification_Authority_-_G4.pem
+Adding debian:Starfield_Services_Root_Certificate_Authority_-_G2.pem
+Adding debian:DigiCert_Assured_ID_Root_G3.pem
+Adding debian:DigiCert_High_Assurance_EV_Root_CA.pem
+Adding debian:UCA_Global_G2_Root.pem
+Adding debian:Starfield_Root_Certificate_Authority_-_G2.pem
+Adding debian:USERTrust_RSA_Certification_Authority.pem
+Adding debian:GTS_Root_R4.pem
+Adding debian:GlobalSign_ECC_Root_CA_-_R5.pem
+Adding debian:D-TRUST_Root_Class_3_CA_2_2009.pem
+Adding debian:Amazon_Root_CA_4.pem
+Adding debian:AffirmTrust_Premium.pem
+Adding debian:emSign_Root_CA_-_C1.pem
+Adding debian:TWCA_Global_Root_CA.pem
+Adding debian:Microsoft_ECC_Root_Certificate_Authority_2017.pem
+Adding debian:GlobalSign_Root_CA_-_R6.pem
+Adding debian:Trustis_FPS_Root_CA.pem
+Adding debian:QuoVadis_Root_CA_3_G3.pem
+Adding debian:GlobalSign_Root_CA_-_R3.pem
+Adding debian:DigiCert_Assured_ID_Root_CA.pem
+Adding debian:Actalis_Authentication_Root_CA.pem
+Adding debian:DigiCert_Global_Root_G3.pem
+Adding debian:T-TeleSec_GlobalRoot_Class_2.pem
+Adding debian:Amazon_Root_CA_1.pem
+Adding debian:Staat_der_Nederlanden_Root_CA_-_G3.pem
+Adding debian:Baltimore_CyberTrust_Root.pem
+Adding debian:GlobalSign_Root_CA.pem
+Adding debian:emSign_Root_CA_-_G1.pem
+Adding debian:DigiCert_Assured_ID_Root_G2.pem
+Adding debian:SwissSign_Silver_CA_-_G2.pem
+Adding debian:CA_Disig_Root_R2.pem
+Adding debian:Hellenic_Academic_and_Research_Institutions_RootCA_2015.pem
+Adding debian:AffirmTrust_Commercial.pem
+Adding debian:QuoVadis_Root_CA_2_G3.pem
+Adding debian:T-TeleSec_GlobalRoot_Class_3.pem
+Adding debian:certSIGN_Root_CA_G2.pem
+Adding debian:Certum_Trusted_Network_CA.pem
+Adding debian:TrustCor_ECA-1.pem
+Adding debian:Hellenic_Academic_and_Research_Institutions_RootCA_2011.pem
+Adding debian:ssl-cert-snakeoil.pem
+Adding debian:SecureTrust_CA.pem
+Adding debian:AffirmTrust_Premium_ECC.pem
+Adding debian:UCA_Extended_Validation_Root.pem
+Adding debian:ISRG_Root_X1.pem
+Adding debian:Secure_Global_CA.pem
+Adding debian:GTS_Root_R3.pem
+Adding debian:TUBITAK_Kamu_SM_SSL_Kok_Sertifikasi_-_Surum_1.pem
+Adding debian:Hongkong_Post_Root_CA_1.pem
+Adding debian:USERTrust_ECC_Certification_Authority.pem
+Adding debian:Microsoft_RSA_Root_Certificate_Authority_2017.pem
+Adding debian:Cybertrust_Global_Root.pem
+Adding debian:TeliaSonera_Root_CA_v1.pem
+Adding debian:AC_RAIZ_FNMT-RCM.pem
+Adding debian:SSL.com_EV_Root_Certification_Authority_RSA_R2.pem
+Adding debian:GTS_Root_R1.pem
+Adding debian:Network_Solutions_Certificate_Authority.pem
+Adding debian:AffirmTrust_Networking.pem
+Adding debian:Trustwave_Global_ECC_P384_Certification_Authority.pem
+Adding debian:COMODO_ECC_Certification_Authority.pem
+Adding debian:GTS_Root_R2.pem
+Adding debian:ePKI_Root_Certification_Authority.pem
+Adding debian:Certigna_Root_CA.pem
+Adding debian:Staat_der_Nederlanden_EV_Root_CA.pem
+Adding debian:Security_Communication_RootCA2.pem
+Adding debian:Entrust_Root_Certification_Authority_-_G2.pem
+Adding debian:D-TRUST_Root_Class_3_CA_2_EV_2009.pem
+Adding debian:SwissSign_Gold_CA_-_G2.pem
+Adding debian:Amazon_Root_CA_3.pem
+Adding debian:SSL.com_EV_Root_Certification_Authority_ECC.pem
+Adding debian:Comodo_AAA_Services_root.pem
+Adding debian:Certum_Trusted_Network_CA_2.pem
+Adding debian:Izenpe.com.pem
+Adding debian:NAVER_Global_Root_Certification_Authority.pem
+Adding debian:TWCA_Root_Certification_Authority.pem
+Adding debian:XRamp_Global_CA_Root.pem
+Adding debian:COMODO_Certification_Authority.pem
+Adding debian:Certigna.pem
+Adding debian:DigiCert_Global_Root_G2.pem
+Adding debian:emSign_ECC_Root_CA_-_G3.pem
+Adding debian:Atos_TrustedRoot_2011.pem
+Adding debian:Starfield_Class_2_CA.pem
+Adding debian:Entrust_Root_Certification_Authority.pem
+Adding debian:e-Szigno_Root_CA_2017.pem
+Adding debian:GeoTrust_Primary_Certification_Authority_-_G2.pem
+Adding debian:QuoVadis_Root_CA.pem
+Adding debian:TrustCor_RootCert_CA-1.pem
+Adding debian:Hellenic_Academic_and_Research_Institutions_ECC_RootCA_2015.pem
+Adding debian:E-Tugra_Certification_Authority.pem
+Adding debian:OISTE_WISeKey_Global_Root_GC_CA.pem
+Adding debian:CFCA_EV_ROOT.pem
+Adding debian:SecureSign_RootCA11.pem
+Adding debian:IdenTrust_Public_Sector_Root_CA_1.pem
+Adding debian:Entrust_Root_Certification_Authority_-_EC1.pem
+Adding debian:GDCA_TrustAUTH_R5_ROOT.pem
+Adding debian:QuoVadis_Root_CA_1_G3.pem
+Adding debian:OISTE_WISeKey_Global_Root_GB_CA.pem
+Adding debian:SSL.com_Root_Certification_Authority_ECC.pem
+Adding debian:IdenTrust_Commercial_Root_CA_1.pem
+Adding debian:COMODO_RSA_Certification_Authority.pem
+Adding debian:GlobalSign_Root_CA_-_R2.pem
+Adding debian:Sonera_Class_2_Root_CA.pem
+Adding debian:emSign_ECC_Root_CA_-_C3.pem
+Adding debian:GlobalSign_ECC_Root_CA_-_R4.pem
+Adding debian:QuoVadis_Root_CA_3.pem
+done.
+正在设置 default-jre (2:1.11-68ubuntu1~18.04.1) ...
+正在设置 openjdk-11-jdk:amd64 (11.0.19+7~us1-0ubuntu1~18.04.1) ...
+update-alternatives: 使用 /usr/lib/jvm/java-11-openjdk-amd64/bin/jconsole 来在自动模式中提供 /usr/bin/jconsole (jconsole)
+正在设置 default-jdk (2:1.11-68ubuntu1~18.04.1) ...
+正在处理用于 libc-bin (2.27-3ubuntu1) 的触发器 ...
+正在处理用于 ca-certificates (20210119~18.04.2) 的触发器 ...
+Updating certificates in /etc/ssl/certs...
+0 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d...
+
+done.
+done.
+tarena@tedu:~/fisco$ cd ~/fisco && curl -#LO https://gitee.com/FISCO-BCOS/console/raw/master-2.0/tools/download_console.sh && bash download_console.sh
+#=#=-#   #                                                                         
+[INFO] Downloading console 2.9.2 from https://github.com/FISCO-BCOS/console/releases/download/v2.9.2/console.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:22 --:--:--     0
+curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to objects.githubusercontent.com:443 
+[WARN] Download speed is too low, try https://osp-1257653870.cos.ap-guangzhou.myqcloud.com/FISCO-BCOS/console/releases/v2.9.2/console.tar.gz
+############                                                                   16.8%^C
+tarena@tedu:~/fisco$ cd ~/fisco && curl -LO https://github.com/FISCO-BCOS/console/releases/download/v2.9.2/download_console.sh && bash download_console.sh
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:22 --:--:--     0
+curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to objects.githubusercontent.com:443 
+tarena@tedu:~/fisco$ cd ~/fisco && curl -#LO https://gitee.com/FISCO-BCOS/console/raw/master-2.0/tools/download_console.sh && bash download_console.sh
+#=#=-#   #                                                                         
+[INFO] Downloading console 2.9.2 from https://github.com/FISCO-BCOS/console/releases/download/v2.9.2/console.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100 48.1M  100 48.1M    0     0   980k      0  0:00:50  0:00:50 --:--:--  991k
+[INFO] Download console successfully
+[INFO] unzip console successfully
+tarena@tedu:~/fisco$ ls
+build_chain.sh  console  console.tar.gz  download_console.sh  nodes
+tarena@tedu:~/fisco$ cp -n console/conf/config-example.toml console/conf/config.tomltarena@tedu:~/fisco$ cd console
+tarena@tedu:~/fisco/console$ ls
+apps  console.sh  get_account.sh     lib          start.sh
+conf  contracts   get_gm_account.sh  sol2java.sh
+tarena@tedu:~/fisco/console$ cd conf
+tarena@tedu:~/fisco/console/conf$ ls
+config-example.toml  config.toml  group-generate-config.toml  log4j2.xml
+tarena@tedu:~/fisco/console/conf$ cd ..
+tarena@tedu:~/fisco/console$ cd ..
+tarena@tedu:~/fisco$ cp -r nodes/127.0.0.1/sdk/* console/conf/
+tarena@tedu:~/fisco$ cd console/conf
+tarena@tedu:~/fisco/console/conf$ ls
+ca.crt               config.toml                 log4j2.xml  sdk.key
+config-example.toml  group-generate-config.toml  sdk.crt
+tarena@tedu:~/fisco/console/conf$ cd ..
+tarena@tedu:~/fisco/console$ cd ..
+tarena@tedu:~/fisco$ bash console/start.sh
+=============================================================================================
+Welcome to FISCO BCOS console(2.9.2)!
+Type 'help' or 'h' for help. Type 'quit' or 'q' to quit console.
+ ________ ______  ______   ______   ______       _______   ______   ______   ______  
+|        |      \/      \ /      \ /      \     |       \ /      \ /      \ /      \ 
+| $$$$$$$$\$$$$$|  $$$$$$|  $$$$$$|  $$$$$$\    | $$$$$$$|  $$$$$$|  $$$$$$|  $$$$$$\
+| $$__     | $$ | $$___\$| $$   \$| $$  | $$    | $$__/ $| $$   \$| $$  | $| $$___\$$
+| $$  \    | $$  \$$    \| $$     | $$  | $$    | $$    $| $$     | $$  | $$\$$    \ 
+| $$$$$    | $$  _\$$$$$$| $$   __| $$  | $$    | $$$$$$$| $$   __| $$  | $$_\$$$$$$\
+| $$      _| $$_|  \__| $| $$__/  | $$__/ $$    | $$__/ $| $$__/  | $$__/ $|  \__| $$
+| $$     |   $$ \\$$    $$\$$    $$\$$    $$    | $$    $$\$$    $$\$$    $$\$$    $$
+ \$$      \$$$$$$ \$$$$$$  \$$$$$$  \$$$$$$      \$$$$$$$  \$$$$$$  \$$$$$$  \$$$$$$
+
+=============================================================================================
+[group:1]> get
+Undefined command: "get". Try "help".
+
+[group:1]> getNodeVersion
+ClientVersion{
+    version='2.9.1',
+    supportedVersion='2.9.1',
+    chainId='1',
+    buildTime='20220922 08:57:35',
+    buildType='Linux/g++/Release',
+    gitBranch='HEAD',
+    gitCommitHash='83a87ad749475c0edcc6d5ce2dabd328a36d3bae'
+}
+
+[group:1]> getPeers
+[
+    PeerInfo{
+        nodeID='76a9f5663b11acc703f1dc2e96fa0f31b2bdbd4b6918134f81e71c0c1fe09498c0de9e2973ef8b5a7ff212ba99b0cb386cc2c6fa5913c0a531e83431ded61573',
+        iPAndPort='127.0.0.1:30300',
+        node='node0',
+        agency='agency',
+        topic='[
+            _block_notify_1
+        ]'
+    },
+    PeerInfo{
+        nodeID='d98560f9fb07871a92f5b2e9d1e3b01516684566196d68d14bc6a6a42a6389fa6030e6ff174b1260f4ac7f9f8c36037ba38ebe069417f4ab82e12b01e3327d53',
+        iPAndPort='127.0.0.1:30303',
+        node='node3',
+        agency='agency',
+        topic='[
+            
+        ]'
+    },
+    PeerInfo{
+        nodeID='5b8cf065c4bb2e4eae9b118a1a9e8bfa17856ed543e58801bd6764ed7d33fde7678df586c54a4f096b4e44346b4b4dd7c6b0d0744fdd5abd136cb325ba18199a',
+        iPAndPort='127.0.0.1:30302',
+        node='node2',
+        agency='agency',
+        topic='[
+            
+        ]'
+    }
+]
+
+[group:1]> deploy HelloWorld
+transaction hash: 0xd9385ab7dfe696f5453962aefa2a6650a0076b43a3c03e4497fd5e128a4b1145
+contract address: 0x33cd4360118ecb71830a412885e4b9e0433f9ef3
+currentAccount: 0x654cba89e5583fc95e701b396706b33b6e9dbd89
+
+[group:1]> getBlockNumber
+1
+
+[group:1]> call Helloworld 0x33cd4360118ecb71830a412885e4b9e0433f9ef3 get 
+Helloworld does not exist 
+
+[group:1]> call HelloWorld 0x33cd4360118ecb71830a412885e4b9e0433f9ef3 get 
+---------------------------------------------------------------------------------------------
+Return code: 0
+description: transaction executed successfully
+Return message: Success
+---------------------------------------------------------------------------------------------
+Return value size:1
+Return types: (STRING)
+Return values:(Hello, World!)
+---------------------------------------------------------------------------------------------
+
+[group:1]> call HelloWorld 0x33cd4360118ecb71830a412885e4b9e0433f9ef3 set "FISCO"
+transaction hash: 0x158f81f2ab25e42da3e7ee7c528f4eb94da15fa55f4b67ef5e3e0e2c6f60f830
+---------------------------------------------------------------------------------------------
+transaction status: 0x0
+description: transaction executed successfully
+---------------------------------------------------------------------------------------------
+Transaction inputs:
+Input value size:1
+Input types: (STRING)
+Input values:(FISCO)
+---------------------------------------------------------------------------------------------
+Receipt message: Success
+Return message: Success
+Return values:[]
+---------------------------------------------------------------------------------------------
+Event logs
+Event: {}
+
+[group:1]> call HelloWorld 0x33cd4360118ecb71830a412885e4b9e0433f9ef3 get 
+---------------------------------------------------------------------------------------------
+Return code: 0
+description: transaction executed successfully
+Return message: Success
+---------------------------------------------------------------------------------------------
+Return value size:1
+Return types: (STRING)
+Return values:(FISCO)
+---------------------------------------------------------------------------------------------
+
+[group:1]> getBlockNumber
+2
+
+[group:1]> quit
+tarena@tedu:~/fisco$ 
